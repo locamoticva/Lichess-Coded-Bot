@@ -58,19 +58,19 @@ option name SyzygyProbeDepth type spin : 100
 option name Syzygy50MoveRule type check : true
 option name SyzygyProbeLimit type spin : 7
 option name Use NNUE type check : true
-#    go_commands:             # additional options to pass to the UCI go command
-#      nodes: 5000               # Search so many nodes only.
-#      depth: 20               # Search depth ply only.
-#      movetime: 1         # Integer. Search exactly movetime milliseconds.
-#  xboard_options:            # arbitrary xboard options passed to the engine
-#    cores: "4"
-#    memory: "4096"
-#    egtpath:                 # dir containing egtb, relative to this project
-#     gaviota: "Gaviota path"
-#     nalimov: "Nalimov Path"
-#     scorpio: "Scorpio Path"
-#     syzygy: "Syzygy Path"
-#  silence_stderr: false      # some engines (yes you, leela) are very noisy
+    go_commands:             # additional options to pass to the UCI go command
+      nodes: 5000               # Search so many nodes only.
+      depth: 20               # Search depth ply only.
+      movetime: 1         # Integer. Search exactly movetime milliseconds.
+  xboard_options:            # arbitrary xboard options passed to the engine
+    cores: "4"
+    memory: "4096"
+    egtpath:                 # dir containing egtb, relative to this project
+     gaviota: "Gaviota path"
+     nalimov: "Nalimov Path"
+     scorpio: "Scorpio Path"
+     syzygy: "Syzygy Path"
+  silence_stderr: false      # some engines (yes you, leela) are very noisy
 
 abort_time: 30               # time to abort a game in seconds when there is no activity
 fake_think_time: false       # artificially slow down the bot to pretend like it's thinking
@@ -81,24 +81,24 @@ challenge:                   # incoming challenges
   accept_bot: true          # accepts challenges coming from other bots
   only_bot: false            # accept challenges by bots only
   max_increment: 180         # maximum amount of increment to accaept a challenge. the max is 180. set to 0 for no increment
-  min_increment: 0           # minimum amount of increment to accept a challenge
+  min_increment: 1           # minimum amount of increment to accept a challenge
   variants:                  # chess variants to accept (http://lichess.org/variant)
     - standard
 #   - fromPosition
-    - antichess
+#   - antichess
     - atomic
     - chess960
-    - crazyhouse
-    - horde
+#   - crazyhouse
+#   - horde
     - kingOfTheHill
-    - racingKings
-    - threeCheck
+#   - racingKings
+#   - threeCheck
   time_controls:             # time controls to accept
     - bullet
     - blitz
     - rapid
     - classical
-    - correspondence
+   # - correspondence
   modes:                     # game modes to accept
     - casual                 # unrated games
     - rated                  # rated games - must comment if the engine doesn't try to win
